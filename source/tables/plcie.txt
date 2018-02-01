@@ -1,0 +1,4 @@
+﻿ID	plec
+1	Mężczyzna
+2	Kobieta
+3	Nie dotyczy

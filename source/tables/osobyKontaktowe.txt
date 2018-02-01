@@ -1,0 +1,1 @@
+﻿ID	imie	nazwisko	mail	mail2	telefon	telefon2	plec	firma

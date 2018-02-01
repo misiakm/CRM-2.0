@@ -1,0 +1,3 @@
+﻿ID	typ
+1	Klient
+2	Podwykonawca

@@ -1,0 +1,1 @@
+﻿ID	nazwaFirmy	pelnaNazwa	NIP	typFirmy	kategoriaFirmy	ulica	kodPocztowy	miasto	nrDomuMieszkania
