@@ -1,1 +1,1 @@
-﻿ID	nazwaProjektu	klient	osobaDecyzyjna
+﻿ID	nazwaProjektu	organizacja	osobaDecyzyjna	status	oczekiwanaDataZamkniecia

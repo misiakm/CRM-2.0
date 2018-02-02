@@ -179,13 +179,13 @@ Private Sub Sb_Clear(ByRef sb() As String)
 End Sub
 
 ' String builder: Append
-Private Sub Sb_Append(ByRef sb() As String, Value As String)
+Private Sub Sb_Append(ByRef sb() As String, value As String)
     If LBound(sb) = -1 Then
         ReDim sb(0 To 0)
     Else
         ReDim Preserve sb(0 To UBound(sb) + 1)
     End If
-    sb(UBound(sb)) = Value
+    sb(UBound(sb)) = value
 End Sub
 
 ' String builder: Get value
@@ -209,14 +209,14 @@ Private Function CloseFormsReports()
     Exit Function
 
 ErrorHandler:
-    Debug.Print "AppCodeImportExport.CloseFormsReports: Error #" & Err.Number & vbCrLf & Err.description
+    Debug.Print "AppCodeImportExport.CloseFormsReports: Error #" & Err.Number & vbCrLf & Err.Description
 End Function
 
 ' Pad a string on the right to make it `count` characters long.
-Public Function PadRight(Value As String, count As Integer)
-    PadRight = Value
-    If Len(Value) < count Then
-        PadRight = PadRight & Space(count - Len(Value))
+Public Function PadRight(value As String, count As Integer)
+    PadRight = value
+    If Len(value) < count Then
+        PadRight = PadRight & Space(count - Len(value))
     End If
 End Function
 
@@ -503,7 +503,7 @@ Public Sub ExportAllSource()
 
     obj_path = source_path & "tables\"
     ClearTextFilesFromDir obj_path, "txt"
-    If (Len(Replace(INCLUDE_TABLES, " ", "")) > 0) Then
+    'If (Len(Replace(INCLUDE_TABLES, " ", "")) > 0) Then
         Debug.Print PadRight("Exporting tables...", 24);
         obj_count = 0
 '        For Each tblName In Split(INCLUDE_TABLES, ",")
@@ -517,7 +517,7 @@ Public Sub ExportAllSource()
             End If
          Next tblName
         Debug.Print "[" & obj_count & "]"
-    End If
+    'End If
 
     For Each obj_type In Split( _
         "forms|Forms|" & acForm & "," & _
@@ -686,7 +686,7 @@ Private Sub ExportTable(tbl_name As String, obj_path As String)
     Dim fso, OutFile
     Dim rs As Object ' DAO.Recordset
     Dim fieldObj As Object ' DAO.Field
-    Dim C As Long, Value As Variant
+    Dim c As Long, value As Variant
 
     Set fso = CreateObject("Scripting.FileSystemObject")
     ' open file for writing with Create=True, Unicode=True (USC-2 Little Endian format)
@@ -694,31 +694,31 @@ Private Sub ExportTable(tbl_name As String, obj_path As String)
     Set OutFile = fso.CreateTextFile(TempFile(), True, True)
 
     Set rs = CurrentDb.OpenRecordset(TableExportSql(tbl_name))
-    C = 0
+    c = 0
     For Each fieldObj In rs.Fields
-        If C <> 0 Then OutFile.write vbTab
-        C = C + 1
+        If c <> 0 Then OutFile.write vbTab
+        c = c + 1
         OutFile.write fieldObj.Name
     Next
     OutFile.write vbCrLf
 
    ' rs.MoveFirst
     Do Until rs.EOF
-        C = 0
+        c = 0
         For Each fieldObj In rs.Fields
-            If C <> 0 Then OutFile.write vbTab
-            C = C + 1
-            Value = rs(fieldObj.Name)
-            If IsNull(Value) Then
-                Value = ""
+            If c <> 0 Then OutFile.write vbTab
+            c = c + 1
+            value = rs(fieldObj.Name)
+            If IsNull(value) Then
+                value = ""
             Else
-                Value = Replace(Value, "\", "\\")
-                Value = Replace(Value, vbCrLf, "\n")
-                Value = Replace(Value, vbCr, "\n")
-                Value = Replace(Value, vbLf, "\n")
-                Value = Replace(Value, vbTab, "\t")
+                value = Replace(value, "\", "\\")
+                value = Replace(value, vbCrLf, "\n")
+                value = Replace(value, vbCr, "\n")
+                value = Replace(value, vbLf, "\n")
+                value = Replace(value, vbTab, "\t")
             End If
-            OutFile.write Value
+            OutFile.write value
         Next
         OutFile.write vbCrLf
         rs.MoveNext
@@ -735,7 +735,7 @@ Private Sub ImportTable(tblName As String, obj_path As String)
     Dim rs As Object ' DAO.Recordset
     Dim fieldObj As Object ' DAO.Field
     Dim fso, InFile As Object
-    Dim C As Long, buf As String, Values() As String, Value As Variant
+    Dim c As Long, buf As String, Values() As String, value As Variant
 
     Set fso = CreateObject("Scripting.FileSystemObject")
     ConvertUtf8Ucs2 obj_path & tblName & ".txt", TempFile()
@@ -750,19 +750,19 @@ Private Sub ImportTable(tblName As String, obj_path As String)
         buf = InFile.ReadLine()
         If Len(Trim(buf)) > 0 Then
             Values = Split(buf, vbTab)
-            C = 0
+            c = 0
             rs.AddNew
             For Each fieldObj In rs.Fields
-                Value = Values(C)
-                If Len(Value) = 0 Then
-                    Value = Null
+                value = Values(c)
+                If Len(value) = 0 Then
+                    value = Null
                 Else
-                    Value = Replace(Value, "\t", vbTab)
-                    Value = Replace(Value, "\n", vbCrLf)
-                    Value = Replace(Value, "\\", "\")
+                    value = Replace(value, "\t", vbTab)
+                    value = Replace(value, "\n", vbCrLf)
+                    value = Replace(value, "\\", "\")
                 End If
-                rs(fieldObj.Name) = Value
-                C = C + 1
+                rs(fieldObj.Name) = value
+                c = c + 1
             Next
             rs.Update
         End If

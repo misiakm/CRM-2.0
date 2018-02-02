@@ -1,0 +1,4 @@
+﻿ID	status
+1	Oczekujący
+2	Przegrany
+3	Wygrany
