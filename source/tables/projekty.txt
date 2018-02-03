@@ -1,1 +1,5 @@
-﻿ID	nazwaProjektu	organizacja	osobaDecyzyjna	status	oczekiwanaDataZamkniecia
+﻿ID	nazwaProjektu	organizacja	osobaDecyzyjna	status	oczekiwanaDataZamkniecia	etapWLejku
+1	Abc szansa sprzedaży	1				1
+2	Testowa	1				2
+3	Nowa	1				2
+4	TEST	1				5

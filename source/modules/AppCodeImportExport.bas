@@ -503,7 +503,7 @@ Public Sub ExportAllSource()
 
     obj_path = source_path & "tables\"
     ClearTextFilesFromDir obj_path, "txt"
-    'If (Len(Replace(INCLUDE_TABLES, " ", "")) > 0) Then
+'    If (Len(Replace(INCLUDE_TABLES, " ", "")) > 0) Then
         Debug.Print PadRight("Exporting tables...", 24);
         obj_count = 0
 '        For Each tblName In Split(INCLUDE_TABLES, ",")
@@ -517,7 +517,7 @@ Public Sub ExportAllSource()
             End If
          Next tblName
         Debug.Print "[" & obj_count & "]"
-    'End If
+'    End If
 
     For Each obj_type In Split( _
         "forms|Forms|" & acForm & "," & _

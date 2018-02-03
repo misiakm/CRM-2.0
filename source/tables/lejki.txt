@@ -1,1 +1,7 @@
 ﻿ID	nazwa
+1	Leed pozyskany
+2	Nawiązano kontakt
+3	Zakwalifikowano potencjalnego klienta
+4	Ustalono potrzeby
+5	Złożono ofertę
+6	Rozpoczęto negocjacje
