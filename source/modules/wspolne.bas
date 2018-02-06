@@ -1,6 +1,6 @@
 Option Compare Database
 Option Explicit
-Const czyDebug = True
+Const czyDebug = False
 Sub drukujObiekt()
 On Error GoTo blad
     Call DoCmd.RunCommand(acCmdPrint)
@@ -22,11 +22,11 @@ Sub runQuery(queryName As String)
 End Sub
 
 Function mkStr(tekst As String, ParamArray param() As Variant)
-    Dim w As String, x As Integer
+    Dim w As String, X As Integer
     w = tekst
-    For x = UBound(param) To LBound(param) Step -1
-        w = Replace(w, "$" & (x + 1 - LBound(param)), param(x))
-    Next x
+    For X = UBound(param) To LBound(param) Step -1
+        w = Replace(w, "$" & (X + 1 - LBound(param)), param(X))
+    Next X
     w = Replace(w, "$n", vbCrLf)
     mkStr = w
 End Function

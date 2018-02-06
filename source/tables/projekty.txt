@@ -1,5 +1,6 @@
 ﻿ID	nazwaProjektu	organizacja	osobaDecyzyjna	status	oczekiwanaDataZamkniecia	etapWLejku
-1	Abc szansa sprzedaży	1				1
+1	Abc szansa sprzedaży	1				2
 2	Testowa	1				2
-3	Nowa	1				2
-4	TEST	1				5
+3	Nowa	1				5
+4	TEST	1				2
+5	KWH	2	1			1

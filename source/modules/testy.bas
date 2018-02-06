@@ -1,5 +1,8 @@
+'Modu³ s³u¿uy do testowania ró¿nych rozwi¹zañ
+
 Option Compare Database
 Option Explicit
+
 
 Sub tworzTabele()
    Dim rec As Recordset, sql As String

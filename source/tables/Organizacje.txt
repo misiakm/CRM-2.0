@@ -1,2 +1,3 @@
 ﻿ID	nazwaFirmy	pelnaNazwa	NIP	typFirmy	kategoriaFirmy	ulica	kodPocztowy	miasto	nrDomuMieszkania
 1	XYZ								
+2	Continental								

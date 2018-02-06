@@ -1,1 +1,4 @@
-﻿ID	imie	nazwisko	mail	mail2	telefon	telefon2	plec	firma
+﻿ID	imie	nazwisko	mail	mail2	telefon	telefon2	plec	firma	opis
+1	Cyprian	abc	os@conti.de		9789798798		1	2	Główny manager
+2	Martyna	xyz	mx@conti.de	mxPrywatny@conti.de	4353453535		2	2	Kierownik
+3	Maciej	aaa	ma@conti.de		34534636		1	2	

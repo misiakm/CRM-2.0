@@ -4,7 +4,7 @@ Option Explicit
 Public w4gC4MwvGamRYmeq8BYL As Integer
 
 Public Function getUser() As Integer
-   getID = w4gC4MwvGamRYmeq8BYL
+   getUser = w4gC4MwvGamRYmeq8BYL
 End Function
 
 Public Sub setUser(Optional login As String)

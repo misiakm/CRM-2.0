@@ -242,7 +242,7 @@ Private Sub md5_transform(state() As Long, buf() As Byte, ByVal index As Long)
     Dim c As Long
     Dim d As Long
     Dim j As Integer
-    Dim x(15) As Long
+    Dim X(15) As Long
     
     a = state(0)
     b = state(1)
@@ -251,81 +251,81 @@ Private Sub md5_transform(state() As Long, buf() As Byte, ByVal index As Long)
     
     ' Decode the next 64 bytes into 16 words with LSB first
     For j = 0 To 15
-        x(j) = uwJoin(buf(index + 3), buf(index + 2), buf(index + 1), buf(index))
+        X(j) = uwJoin(buf(index + 3), buf(index + 2), buf(index + 1), buf(index))
         index = index + 4
     Next
     
     ' Round 1
-    a = FF(a, b, c, d, x(0), S11, &HD76AA478)   ' 1
-    d = FF(d, a, b, c, x(1), S12, &HE8C7B756)   ' 2
-    c = FF(c, d, a, b, x(2), S13, &H242070DB)   ' 3
-    b = FF(b, c, d, a, x(3), S14, &HC1BDCEEE)   ' 4
-    a = FF(a, b, c, d, x(4), S11, &HF57C0FAF)   ' 5
-    d = FF(d, a, b, c, x(5), S12, &H4787C62A)   ' 6
-    c = FF(c, d, a, b, x(6), S13, &HA8304613)   ' 7
-    b = FF(b, c, d, a, x(7), S14, &HFD469501)   ' 8
-    a = FF(a, b, c, d, x(8), S11, &H698098D8)   ' 9
-    d = FF(d, a, b, c, x(9), S12, &H8B44F7AF)   ' 10
-    c = FF(c, d, a, b, x(10), S13, &HFFFF5BB1)  ' 11
-    b = FF(b, c, d, a, x(11), S14, &H895CD7BE)  ' 12
-    a = FF(a, b, c, d, x(12), S11, &H6B901122)  ' 13
-    d = FF(d, a, b, c, x(13), S12, &HFD987193)  ' 14
-    c = FF(c, d, a, b, x(14), S13, &HA679438E)  ' 15
-    b = FF(b, c, d, a, x(15), S14, &H49B40821)  ' 16
+    a = FF(a, b, c, d, X(0), S11, &HD76AA478)   ' 1
+    d = FF(d, a, b, c, X(1), S12, &HE8C7B756)   ' 2
+    c = FF(c, d, a, b, X(2), S13, &H242070DB)   ' 3
+    b = FF(b, c, d, a, X(3), S14, &HC1BDCEEE)   ' 4
+    a = FF(a, b, c, d, X(4), S11, &HF57C0FAF)   ' 5
+    d = FF(d, a, b, c, X(5), S12, &H4787C62A)   ' 6
+    c = FF(c, d, a, b, X(6), S13, &HA8304613)   ' 7
+    b = FF(b, c, d, a, X(7), S14, &HFD469501)   ' 8
+    a = FF(a, b, c, d, X(8), S11, &H698098D8)   ' 9
+    d = FF(d, a, b, c, X(9), S12, &H8B44F7AF)   ' 10
+    c = FF(c, d, a, b, X(10), S13, &HFFFF5BB1)  ' 11
+    b = FF(b, c, d, a, X(11), S14, &H895CD7BE)  ' 12
+    a = FF(a, b, c, d, X(12), S11, &H6B901122)  ' 13
+    d = FF(d, a, b, c, X(13), S12, &HFD987193)  ' 14
+    c = FF(c, d, a, b, X(14), S13, &HA679438E)  ' 15
+    b = FF(b, c, d, a, X(15), S14, &H49B40821)  ' 16
     
     ' Round 2
-    a = GG(a, b, c, d, x(1), S21, &HF61E2562)   ' 17
-    d = GG(d, a, b, c, x(6), S22, &HC040B340)   ' 18
-    c = GG(c, d, a, b, x(11), S23, &H265E5A51)  ' 19
-    b = GG(b, c, d, a, x(0), S24, &HE9B6C7AA)   ' 20
-    a = GG(a, b, c, d, x(5), S21, &HD62F105D)   ' 21
-    d = GG(d, a, b, c, x(10), S22, &H2441453)   ' 22
-    c = GG(c, d, a, b, x(15), S23, &HD8A1E681)  ' 23
-    b = GG(b, c, d, a, x(4), S24, &HE7D3FBC8)   ' 24
-    a = GG(a, b, c, d, x(9), S21, &H21E1CDE6)   ' 25
-    d = GG(d, a, b, c, x(14), S22, &HC33707D6)  ' 26
-    c = GG(c, d, a, b, x(3), S23, &HF4D50D87)   ' 27
-    b = GG(b, c, d, a, x(8), S24, &H455A14ED)   ' 28
-    a = GG(a, b, c, d, x(13), S21, &HA9E3E905)  ' 29
-    d = GG(d, a, b, c, x(2), S22, &HFCEFA3F8)   ' 30
-    c = GG(c, d, a, b, x(7), S23, &H676F02D9)   ' 31
-    b = GG(b, c, d, a, x(12), S24, &H8D2A4C8A)  ' 32
+    a = GG(a, b, c, d, X(1), S21, &HF61E2562)   ' 17
+    d = GG(d, a, b, c, X(6), S22, &HC040B340)   ' 18
+    c = GG(c, d, a, b, X(11), S23, &H265E5A51)  ' 19
+    b = GG(b, c, d, a, X(0), S24, &HE9B6C7AA)   ' 20
+    a = GG(a, b, c, d, X(5), S21, &HD62F105D)   ' 21
+    d = GG(d, a, b, c, X(10), S22, &H2441453)   ' 22
+    c = GG(c, d, a, b, X(15), S23, &HD8A1E681)  ' 23
+    b = GG(b, c, d, a, X(4), S24, &HE7D3FBC8)   ' 24
+    a = GG(a, b, c, d, X(9), S21, &H21E1CDE6)   ' 25
+    d = GG(d, a, b, c, X(14), S22, &HC33707D6)  ' 26
+    c = GG(c, d, a, b, X(3), S23, &HF4D50D87)   ' 27
+    b = GG(b, c, d, a, X(8), S24, &H455A14ED)   ' 28
+    a = GG(a, b, c, d, X(13), S21, &HA9E3E905)  ' 29
+    d = GG(d, a, b, c, X(2), S22, &HFCEFA3F8)   ' 30
+    c = GG(c, d, a, b, X(7), S23, &H676F02D9)   ' 31
+    b = GG(b, c, d, a, X(12), S24, &H8D2A4C8A)  ' 32
     
     ' Round 3
-    a = HH(a, b, c, d, x(5), S31, &HFFFA3942)   ' 33
-    d = HH(d, a, b, c, x(8), S32, &H8771F681)   ' 34
-    c = HH(c, d, a, b, x(11), S33, &H6D9D6122)  ' 35
-    b = HH(b, c, d, a, x(14), S34, &HFDE5380C)  ' 36
-    a = HH(a, b, c, d, x(1), S31, &HA4BEEA44)   ' 37
-    d = HH(d, a, b, c, x(4), S32, &H4BDECFA9)   ' 38
-    c = HH(c, d, a, b, x(7), S33, &HF6BB4B60)   ' 39
-    b = HH(b, c, d, a, x(10), S34, &HBEBFBC70)  ' 40
-    a = HH(a, b, c, d, x(13), S31, &H289B7EC6)  ' 41
-    d = HH(d, a, b, c, x(0), S32, &HEAA127FA)   ' 42
-    c = HH(c, d, a, b, x(3), S33, &HD4EF3085)   ' 43
-    b = HH(b, c, d, a, x(6), S34, &H4881D05)    ' 44
-    a = HH(a, b, c, d, x(9), S31, &HD9D4D039)   ' 45
-    d = HH(d, a, b, c, x(12), S32, &HE6DB99E5)  ' 46
-    c = HH(c, d, a, b, x(15), S33, &H1FA27CF8)  ' 47
-    b = HH(b, c, d, a, x(2), S34, &HC4AC5665)   ' 48
+    a = HH(a, b, c, d, X(5), S31, &HFFFA3942)   ' 33
+    d = HH(d, a, b, c, X(8), S32, &H8771F681)   ' 34
+    c = HH(c, d, a, b, X(11), S33, &H6D9D6122)  ' 35
+    b = HH(b, c, d, a, X(14), S34, &HFDE5380C)  ' 36
+    a = HH(a, b, c, d, X(1), S31, &HA4BEEA44)   ' 37
+    d = HH(d, a, b, c, X(4), S32, &H4BDECFA9)   ' 38
+    c = HH(c, d, a, b, X(7), S33, &HF6BB4B60)   ' 39
+    b = HH(b, c, d, a, X(10), S34, &HBEBFBC70)  ' 40
+    a = HH(a, b, c, d, X(13), S31, &H289B7EC6)  ' 41
+    d = HH(d, a, b, c, X(0), S32, &HEAA127FA)   ' 42
+    c = HH(c, d, a, b, X(3), S33, &HD4EF3085)   ' 43
+    b = HH(b, c, d, a, X(6), S34, &H4881D05)    ' 44
+    a = HH(a, b, c, d, X(9), S31, &HD9D4D039)   ' 45
+    d = HH(d, a, b, c, X(12), S32, &HE6DB99E5)  ' 46
+    c = HH(c, d, a, b, X(15), S33, &H1FA27CF8)  ' 47
+    b = HH(b, c, d, a, X(2), S34, &HC4AC5665)   ' 48
     
     ' Round 4
-    a = II(a, b, c, d, x(0), S41, &HF4292244)   ' 49
-    d = II(d, a, b, c, x(7), S42, &H432AFF97)   ' 50
-    c = II(c, d, a, b, x(14), S43, &HAB9423A7)  ' 51
-    b = II(b, c, d, a, x(5), S44, &HFC93A039)   ' 52
-    a = II(a, b, c, d, x(12), S41, &H655B59C3)  ' 53
-    d = II(d, a, b, c, x(3), S42, &H8F0CCC92)   ' 54
-    c = II(c, d, a, b, x(10), S43, &HFFEFF47D)  ' 55
-    b = II(b, c, d, a, x(1), S44, &H85845DD1)   ' 56
-    a = II(a, b, c, d, x(8), S41, &H6FA87E4F)   ' 57
-    d = II(d, a, b, c, x(15), S42, &HFE2CE6E0)  ' 58
-    c = II(c, d, a, b, x(6), S43, &HA3014314)   ' 59
-    b = II(b, c, d, a, x(13), S44, &H4E0811A1)  ' 60
-    a = II(a, b, c, d, x(4), S41, &HF7537E82)   ' 61
-    d = II(d, a, b, c, x(11), S42, &HBD3AF235)  ' 62
-    c = II(c, d, a, b, x(2), S43, &H2AD7D2BB)   ' 63
-    b = II(b, c, d, a, x(9), S44, &HEB86D391)   ' 64
+    a = II(a, b, c, d, X(0), S41, &HF4292244)   ' 49
+    d = II(d, a, b, c, X(7), S42, &H432AFF97)   ' 50
+    c = II(c, d, a, b, X(14), S43, &HAB9423A7)  ' 51
+    b = II(b, c, d, a, X(5), S44, &HFC93A039)   ' 52
+    a = II(a, b, c, d, X(12), S41, &H655B59C3)  ' 53
+    d = II(d, a, b, c, X(3), S42, &H8F0CCC92)   ' 54
+    c = II(c, d, a, b, X(10), S43, &HFFEFF47D)  ' 55
+    b = II(b, c, d, a, X(1), S44, &H85845DD1)   ' 56
+    a = II(a, b, c, d, X(8), S41, &H6FA87E4F)   ' 57
+    d = II(d, a, b, c, X(15), S42, &HFE2CE6E0)  ' 58
+    c = II(c, d, a, b, X(6), S43, &HA3014314)   ' 59
+    b = II(b, c, d, a, X(13), S44, &H4E0811A1)  ' 60
+    a = II(a, b, c, d, X(4), S41, &HF7537E82)   ' 61
+    d = II(d, a, b, c, X(11), S42, &HBD3AF235)  ' 62
+    c = II(c, d, a, b, X(2), S43, &H2AD7D2BB)   ' 63
+    b = II(b, c, d, a, X(9), S44, &HEB86D391)   ' 64
     
     state(0) = uwAdd(state(0), a)
     state(1) = uwAdd(state(1), b)
@@ -336,7 +336,7 @@ End Sub
 
 ' FF, GG, HH, and II transformations for rounds 1, 2, 3, and 4
 
-Private Function AddRotAdd(f As Long, a As Long, b As Long, x As Long, s As Integer, ac As Long) As Long
+Private Function AddRotAdd(f As Long, a As Long, b As Long, X As Long, s As Integer, ac As Long) As Long
 ' Common routine for FF, GG, HH and II
 ' #define AddRotAdd(f, a, b, c, d, x, s, ac) { \
 '  (a) += f + (x) + (UINT4)(ac); \
@@ -345,13 +345,13 @@ Private Function AddRotAdd(f As Long, a As Long, b As Long, x As Long, s As Inte
 '  }
     Dim temp As Long
     temp = uwAdd(a, f)
-    temp = uwAdd(temp, x)
+    temp = uwAdd(temp, X)
     temp = uwAdd(temp, ac)
     temp = uwRol(temp, s)
     AddRotAdd = uwAdd(temp, b)
 End Function
 
-Private Function FF(a As Long, b As Long, c As Long, d As Long, x As Long, s As Integer, ac As Long) As Long
+Private Function FF(a As Long, b As Long, c As Long, d As Long, X As Long, s As Integer, ac As Long) As Long
 ' Returns new value of a
 ' #define F(x, y, z) (((x) & (y)) | ((~x) & (z)))
 ' #define FF(a, b, c, d, x, s, ac) { \
@@ -365,32 +365,32 @@ Private Function FF(a As Long, b As Long, c As Long, d As Long, x As Long, s As 
     t = b And c
     t2 = (Not b) And d
     t = t Or t2
-    FF = AddRotAdd(t, a, b, x, s, ac)
+    FF = AddRotAdd(t, a, b, X, s, ac)
 End Function
 
-Private Function GG(a As Long, b As Long, c As Long, d As Long, x As Long, s As Integer, ac As Long) As Long
+Private Function GG(a As Long, b As Long, c As Long, d As Long, X As Long, s As Integer, ac As Long) As Long
 ' #define G(b, c, d) (((b) & (d)) | ((c) & (~d)))
     Dim t As Long
     Dim t2 As Long
     t = b And d
     t2 = c And (Not d)
     t = t Or t2
-    GG = AddRotAdd(t, a, b, x, s, ac)
+    GG = AddRotAdd(t, a, b, X, s, ac)
 End Function
 
-Private Function HH(a As Long, b As Long, c As Long, d As Long, x As Long, s As Integer, ac As Long) As Long
+Private Function HH(a As Long, b As Long, c As Long, d As Long, X As Long, s As Integer, ac As Long) As Long
 ' #define H(b, c, d) ((b) ^ (c) ^ (d))
     Dim t As Long
     t = b Xor c Xor d
-    HH = AddRotAdd(t, a, b, x, s, ac)
+    HH = AddRotAdd(t, a, b, X, s, ac)
 End Function
 
-Private Function II(a As Long, b As Long, c As Long, d As Long, x As Long, s As Integer, ac As Long) As Long
+Private Function II(a As Long, b As Long, c As Long, d As Long, X As Long, s As Integer, ac As Long) As Long
 ' #define I(b, c, d) ((c) ^ ((b) | (~d)))
     Dim t As Long
     t = b Or (Not d)
     t = c Xor t
-    II = AddRotAdd(t, a, b, x, s, ac)
+    II = AddRotAdd(t, a, b, X, s, ac)
 End Function
 
 ' Unsigned 32-bit word functions suitable for VB/VBA

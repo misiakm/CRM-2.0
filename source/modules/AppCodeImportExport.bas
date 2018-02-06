@@ -169,8 +169,8 @@ End Sub
 
 ' String builder: Init
 Private Function Sb_Init() As String()
-    Dim x(-1 To -1) As String
-    Sb_Init = x
+    Dim X(-1 To -1) As String
+    Sb_Init = X
 End Function
 
 ' String builder: Clear

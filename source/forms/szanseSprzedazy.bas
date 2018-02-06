@@ -12,13 +12,15 @@ PublishOption =1
     Width =18885
     DatasheetFontHeight =11
     ItemSuffix =70
-    Right =20550
-    Bottom =12285
+    Right =25575
+    Bottom =12540
     DatasheetGridlinesColor =14806254
+        0xe9561df60c10e540
+    End
     RecordSource ="TRANSFORM First(\"X\") AS Wyr1 SELECT projekty.nazwaProjektu, projekty.etapWLejk"
-        "u FROM lejki LEFT JOIN projekty ON lejki.ID = projekty.etapWLejku GROUP BY proje"
-        "kty.nazwaProjektu, projekty.etapWLejku ORDER BY projekty.nazwaProjektu, lejki.ID"
-        " PIVOT lejki.ID; "
+        "u, projekty.ID AS IDProjektu FROM lejki LEFT JOIN projekty ON lejki.ID = projekt"
+        "y.etapWLejku GROUP BY projekty.nazwaProjektu, projekty.etapWLejku, projekty.ID O"
+        "RDER BY projekty.nazwaProjektu, lejki.ID PIVOT lejki.ID; "
     DatasheetFontName ="Calibri"
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
@@ -97,6 +99,15 @@ PublishOption =1
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+            BorderLineStyle =0
+            Width =1701
+            Height =1701
+            BorderThemeColorIndex =1
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            BorderShade =65.0
+            ShowPageHeaderAndPageFooter =1
+        End
             Height =240
             GridlineColor =12632256
             GridlineThemeColorIndex =1
@@ -112,6 +123,7 @@ PublishOption =1
         End
             Height =396
             Name ="Szczegóły"
+            OnMouseMove ="[Event Procedure]"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -127,6 +139,7 @@ PublishOption =1
                     ForeColor =4210752
                     Name ="nazwaProjektu"
                     ControlSource ="nazwaProjektu"
+                    OnClick ="[Event Procedure]"
                     GroupTable =1
                     TopPadding =0
                     BottomPadding =0
@@ -139,7 +152,6 @@ PublishOption =1
                     LayoutGroup =1
                     GroupTable =1
                 End
-                    Visible = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
@@ -153,11 +165,14 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek1"
-                        0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
-                        0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
-                        0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003d00310000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003e00310000000000
+                    OnClick ="[Event Procedure]"
+                    Tag ="1"
+                        0x01000000a6000000020000000100000000000000000000001000000001000000 ,
+                        0x0000000022b14c000100000000000000120000002100000001000000ffffff00 ,
+                        0xba14190000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00650074006100700057004c0065006a006b0075005d003e003d0031000000 ,
+                        0x000000005b00650074006100700057004c0065006a006b0075005d003c003100 ,
+                        0x000000000000
                     End
                     GroupTable =1
                     LeftPadding =0
@@ -173,15 +188,14 @@ PublishOption =1
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
-                        0x01000200000001000000000000000100000000000000d1eaf0000e0000005b00 ,
-                        0x650074006100700057004c0065006a006b0075005d003d003100000000000000 ,
-                        0x00000000000000000000000000000001000000000000000100000000000000a4 ,
-                        0xd5e2000e0000005b00650074006100700057004c0065006a006b0075005d003e ,
-                        0x003100000000000000000000000000000000000000000000
+                        0x0100020000000100000000000000010000000000000022b14c000f0000005b00 ,
+                        0x650074006100700057004c0065006a006b0075005d003e003d00310000000000 ,
+                        0x000000000022b14c000000000000000000010000000000000001000000ffffff ,
+                        0x00ba1419000e0000005b00650074006100700057004c0065006a006b0075005d ,
+                        0x003c003100000000000000000000ba1419000000000000000000
                     End
                     GroupTable =1
                 End
-                    Visible = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
@@ -195,11 +209,14 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek2"
-                        0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
-                        0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
-                        0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003d00320000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003e00320000000000
+                    OnClick ="[Event Procedure]"
+                    Tag ="2"
+                        0x01000000a6000000020000000100000000000000000000001000000001000000 ,
+                        0x0000000022b14c000100000000000000120000002100000001000000ffffff00 ,
+                        0xba14190000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00650074006100700057004c0065006a006b0075005d003e003d0032000000 ,
+                        0x000000005b00650074006100700057004c0065006a006b0075005d003c003200 ,
+                        0x000000000000
                     End
                     GroupTable =1
                     LeftPadding =0
@@ -215,15 +232,14 @@ PublishOption =1
                     ColumnStart =2
                     ColumnEnd =2
                     LayoutGroup =1
-                        0x01000200000001000000000000000100000000000000d1eaf0000e0000005b00 ,
-                        0x650074006100700057004c0065006a006b0075005d003d003200000000000000 ,
-                        0x00000000000000000000000000000001000000000000000100000000000000a4 ,
-                        0xd5e2000e0000005b00650074006100700057004c0065006a006b0075005d003e ,
-                        0x003200000000000000000000000000000000000000000000
+                        0x0100020000000100000000000000010000000000000022b14c000f0000005b00 ,
+                        0x650074006100700057004c0065006a006b0075005d003e003d00320000000000 ,
+                        0x000000000022b14c000000000000000000010000000000000001000000ffffff ,
+                        0x00ba1419000e0000005b00650074006100700057004c0065006a006b0075005d ,
+                        0x003c003200000000000000000000ba1419000000000000000000
                     End
                     GroupTable =1
                 End
-                    Visible = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
@@ -237,11 +253,14 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek3"
-                        0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
-                        0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
-                        0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003d00320000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003e00320000000000
+                    OnClick ="[Event Procedure]"
+                    Tag ="3"
+                        0x01000000a6000000020000000100000000000000000000001000000001000000 ,
+                        0x0000000022b14c000100000000000000120000002100000001000000ffffff00 ,
+                        0xba14190000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00650074006100700057004c0065006a006b0075005d003e003d0033000000 ,
+                        0x000000005b00650074006100700057004c0065006a006b0075005d003c003300 ,
+                        0x000000000000
                     End
                     GroupTable =1
                     LeftPadding =0
@@ -257,15 +276,14 @@ PublishOption =1
                     ColumnStart =3
                     ColumnEnd =3
                     LayoutGroup =1
-                        0x01000200000001000000000000000100000000000000d1eaf0000e0000005b00 ,
-                        0x650074006100700057004c0065006a006b0075005d003d003200000000000000 ,
-                        0x00000000000000000000000000000001000000000000000100000000000000a4 ,
-                        0xd5e2000e0000005b00650074006100700057004c0065006a006b0075005d003e ,
-                        0x003200000000000000000000000000000000000000000000
+                        0x0100020000000100000000000000010000000000000022b14c000f0000005b00 ,
+                        0x650074006100700057004c0065006a006b0075005d003e003d00330000000000 ,
+                        0x000000000022b14c000000000000000000010000000000000001000000ffffff ,
+                        0x00ba1419000e0000005b00650074006100700057004c0065006a006b0075005d ,
+                        0x003c003300000000000000000000ba1419000000000000000000
                     End
                     GroupTable =1
                 End
-                    Visible = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
@@ -279,11 +297,14 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek4"
-                        0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
-                        0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
-                        0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003d00320000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003e00320000000000
+                    OnClick ="[Event Procedure]"
+                    Tag ="4"
+                        0x01000000a6000000020000000100000000000000000000001000000001000000 ,
+                        0x0000000022b14c000100000000000000120000002100000001000000ffffff00 ,
+                        0xba14190000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00650074006100700057004c0065006a006b0075005d003e003d0034000000 ,
+                        0x000000005b00650074006100700057004c0065006a006b0075005d003c003400 ,
+                        0x000000000000
                     End
                     GroupTable =1
                     LeftPadding =0
@@ -299,15 +320,14 @@ PublishOption =1
                     ColumnStart =4
                     ColumnEnd =4
                     LayoutGroup =1
-                        0x01000200000001000000000000000100000000000000d1eaf0000e0000005b00 ,
-                        0x650074006100700057004c0065006a006b0075005d003d003200000000000000 ,
-                        0x00000000000000000000000000000001000000000000000100000000000000a4 ,
-                        0xd5e2000e0000005b00650074006100700057004c0065006a006b0075005d003e ,
-                        0x003200000000000000000000000000000000000000000000
+                        0x0100020000000100000000000000010000000000000022b14c000f0000005b00 ,
+                        0x650074006100700057004c0065006a006b0075005d003e003d00340000000000 ,
+                        0x000000000022b14c000000000000000000010000000000000001000000ffffff ,
+                        0x00ba1419000e0000005b00650074006100700057004c0065006a006b0075005d ,
+                        0x003c003400000000000000000000ba1419000000000000000000
                     End
                     GroupTable =1
                 End
-                    Visible = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
@@ -321,11 +341,14 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek5"
-                        0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
-                        0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
-                        0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003d00320000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003e00320000000000
+                    OnClick ="[Event Procedure]"
+                    Tag ="5"
+                        0x01000000a6000000020000000100000000000000000000001000000001000000 ,
+                        0x0000000022b14c000100000000000000120000002100000001000000ffffff00 ,
+                        0xba14190000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00650074006100700057004c0065006a006b0075005d003e003d0035000000 ,
+                        0x000000005b00650074006100700057004c0065006a006b0075005d003c003500 ,
+                        0x000000000000
                     End
                     GroupTable =1
                     LeftPadding =0
@@ -341,15 +364,14 @@ PublishOption =1
                     ColumnStart =5
                     ColumnEnd =5
                     LayoutGroup =1
-                        0x01000200000001000000000000000100000000000000d1eaf0000e0000005b00 ,
-                        0x650074006100700057004c0065006a006b0075005d003d003200000000000000 ,
-                        0x00000000000000000000000000000001000000000000000100000000000000a4 ,
-                        0xd5e2000e0000005b00650074006100700057004c0065006a006b0075005d003e ,
-                        0x003200000000000000000000000000000000000000000000
+                        0x0100020000000100000000000000010000000000000022b14c000f0000005b00 ,
+                        0x650074006100700057004c0065006a006b0075005d003e003d00350000000000 ,
+                        0x000000000022b14c000000000000000000010000000000000001000000ffffff ,
+                        0x00ba1419000e0000005b00650074006100700057004c0065006a006b0075005d ,
+                        0x003c003500000000000000000000ba1419000000000000000000
                     End
                     GroupTable =1
                 End
-                    Visible = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
@@ -363,11 +385,14 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek6"
-                        0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
-                        0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
-                        0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003d00320000000000 ,
-                        0x5b00650074006100700057004c0065006a006b0075005d003e00320000000000
+                    OnClick ="[Event Procedure]"
+                    Tag ="6"
+                        0x01000000a6000000020000000100000000000000000000001000000001000000 ,
+                        0x0000000022b14c000100000000000000120000002100000001000000ffffff00 ,
+                        0xba14190000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00650074006100700057004c0065006a006b0075005d003e003d0036000000 ,
+                        0x000000005b00650074006100700057004c0065006a006b0075005d003c003600 ,
+                        0x000000000000
                     End
                     GroupTable =1
                     LeftPadding =0
@@ -383,11 +408,11 @@ PublishOption =1
                     ColumnStart =6
                     ColumnEnd =6
                     LayoutGroup =1
-                        0x01000200000001000000000000000100000000000000d1eaf0000e0000005b00 ,
-                        0x650074006100700057004c0065006a006b0075005d003d003200000000000000 ,
-                        0x00000000000000000000000000000001000000000000000100000000000000a4 ,
-                        0xd5e2000e0000005b00650074006100700057004c0065006a006b0075005d003e ,
-                        0x003200000000000000000000000000000000000000000000
+                        0x0100020000000100000000000000010000000000000022b14c000f0000005b00 ,
+                        0x650074006100700057004c0065006a006b0075005d003e003d00360000000000 ,
+                        0x000000000022b14c000000000000000000010000000000000001000000ffffff ,
+                        0x00ba1419000e0000005b00650074006100700057004c0065006a006b0075005d ,
+                        0x003c003600000000000000000000ba1419000000000000000000
                     End
                     GroupTable =1
                 End
@@ -405,6 +430,7 @@ PublishOption =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="lejek7"
+                    OnClick ="[Event Procedure]"
                         0x01000000a0000000020000000100000000000000000000000f00000001000000 ,
                         0x00000000d1eaf0000100000000000000100000001f0000000100000000000000 ,
                         0xa4d5e20000000000000000000000000000000000000000000000000000000000 ,
@@ -450,31 +476,15 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
+Public k As New Collection
 
 Private Sub Form_Load()
-   Call zmienPrzyciskiLejki
+   Call zmienPrzyciskiLejki(Me)
+   Call zbierzLejki(Me, k)
 End Sub
 
-Sub zmienPrzyciskiLejki()
-   Dim rec As Recordset, i As Integer, nazwa As String
-   Set rec = CurrentDb.OpenRecordset("lejki")
-   Do Until rec.EOF
-      i = i + 1
-      nazwa = IIf(Len(rec!nazwa) > 25, Left(rec!nazwa, 22) & "...", rec!nazwa)
-      Me.Controls("lejek" & i) = nazwa
-      Me.Controls("lejek" & i).Visible = True
-      Call ustawFormatowanieWarunkowe(i)
-      rec.MoveNext
-   Loop
-End Sub
-
-Sub ustawFormatowanieWarunkowe(i As Integer)
-   Dim tb As TextBox
-   Set tb = Me.Controls("lejek" & i)
-   tb.FormatConditions.Delete
-   tb.FormatConditions.Add acExpression, , "[etapWLejku]>=" & i
-   tb.FormatConditions(0).BackColor = "5026082"
-   tb.FormatConditions.Add acExpression, , "[etapWLejku]<" & i
-   tb.FormatConditions(1).BackColor = "1643706"
-   tb.FormatConditions(1).ForeColor = 16777215
+Private Sub nazwaProjektu_Click()
+   Report_osobyKontaktowePodraport.FilterOn = False
+   Report_osobyKontaktowePodraport.Filter = mkStr("IDProjektu = $1", Me.IDProjektu)
+   Report_osobyKontaktowePodraport.FilterOn = True
 End Sub
