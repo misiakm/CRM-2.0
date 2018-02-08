@@ -18,3 +18,12 @@ Sub tworzTabele()
    Set rec = CurrentDb.OpenRecordset("projekty")
    
 End Sub
+
+Sub a()
+   Dim c As Control
+   For Each c In Forms("zadanie").Controls
+      If c.ControlType = acLabel Then
+         c.Caption = UCase(c.Caption)
+      End If
+   Next c
+End Sub

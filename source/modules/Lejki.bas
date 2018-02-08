@@ -18,6 +18,8 @@ Sub zmienPrzyciskiLejki(f As Form)
       i = i + 1
       nazwa = IIf(Len(rec!nazwa) > 25, Left(rec!nazwa, 22) & "...", rec!nazwa)
       f.Controls("lejek" & i) = nazwa
+      f.Controls("lb" & i).Caption = nazwa
+      f.Controls("lb" & i).Visible = True
       f.Controls("lejek" & i).Visible = True
       Call ustawFormatowanieWarunkowe(i, f, rec!ID)
       rec.MoveNext
@@ -31,6 +33,7 @@ Sub ustawFormatowanieWarunkowe(i As Integer, f As Form, IDlejka As Integer)
    tb.FormatConditions.Delete
    tb.FormatConditions.Add acExpression, , "[etapWLejku]>=" & i
    tb.FormatConditions(0).BackColor = "5026082"
+   tb.FormatConditions(0).ForeColor = 16777215
    tb.FormatConditions.Add acExpression, , "[etapWLejku]<" & i
    tb.FormatConditions(1).BackColor = "1643706"
    tb.FormatConditions(1).ForeColor = 16777215

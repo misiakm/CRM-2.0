@@ -14,7 +14,7 @@ PublishOption =1
     DatasheetFontHeight =11
     ItemSuffix =13
     Right =25575
-    Bottom =12285
+    Bottom =12540
     DatasheetGridlinesColor =14806254
         0x660efae0b80fe540
     End
@@ -163,6 +163,7 @@ PublishOption =1
                     TabIndex =1
                     BorderColor =12419407
                     Name ="tbHaslo"
+                    InputMask ="Password"
                     GroupTable =1
                     BottomPadding =150
                     GridlineColor =10921638
@@ -265,6 +266,8 @@ Private Sub btnZaloguj_Click()
    haslo = MD5_string(Me.tbHaslo)
    If DCount("*", "Uzytkownicy", mkStr("login = '$1' and haslo = '$2'", Me.tbLogin, haslo)) = 1 Then
       Call setUser(Me.tbLogin)
+      DoCmd.openForm "Panel"
+      DoCmd.Close acForm, Me.Name
    Else
       MsgBox "Brak dostępu"
       Me.tbHaslo = Null

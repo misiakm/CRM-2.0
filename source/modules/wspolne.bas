@@ -55,6 +55,12 @@ blad:
     End Select
 End Sub
 
+Sub saveRecord()
+   On Error Resume Next
+   DoCmd.RunCommand acCmdSaveRecord
+   On Error GoTo 0
+End Sub
+
 
 Sub openForm(formularz As String, Optional widok As AcView = acNormal, Optional tabele As String = "", Optional kryteria As String = "", Optional komunikat As String = "bark wyników")
 On Error GoTo blad

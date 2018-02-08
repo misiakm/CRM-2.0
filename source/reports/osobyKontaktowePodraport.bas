@@ -3,6 +3,7 @@ VersionRequired =20
 PublishOption =1
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularCharSet =238
     DateGrouping =1
@@ -13,9 +14,12 @@ PublishOption =1
     Width =2895
     DatasheetFontHeight =11
     ItemSuffix =68
-    Right =20550
-    Bottom =10125
+    Left =16140
+    Top =660
+    Right =19050
+    Bottom =7740
     DatasheetGridlinesColor =14806254
+    Filter ="IDProjektu = 5"
         0x762013700f10e540
     End
     RecordSource ="SELECT * FROM (Select p.ID As IDProjektu, nazwaProjektu, imie & \" \" & nazwisko"
@@ -29,7 +33,7 @@ PublishOption =1
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
-    FilterOnLoad =0
+    FilterOnLoad =255
     FitToPage =1
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
@@ -98,21 +102,22 @@ PublishOption =1
             KeepTogether = NotDefault
             CanGrow = NotDefault
             CanShrink = NotDefault
-            Height =450
-            BackColor =4144959
+            Height =405
+            BackColor =5026082
             Name ="NagłówekGrupy0"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
                     CanShrink = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     Width =2841
                     Height =405
                     FontSize =14
                     FontWeight =700
-                    BackColor =4144959
+                    BackColor =5026082
                     BorderColor =10921638
                     ForeColor =16777215
                     Name ="nazwaProjektu"
@@ -135,6 +140,7 @@ PublishOption =1
             BackThemeColorIndex =1
                     CanShrink = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Width =2895
@@ -146,7 +152,7 @@ PublishOption =1
                     Name ="Tekst47"
                     ControlSource ="osobaKontaktowa"
                         0x010000008a000000010000000100000000000000000000001400000001000000 ,
-                        0x00000000fffa9300000000000000000000000000000000000000000000000000 ,
+                        0x22b14c00ffffff00000000000000000000000000000000000000000000000000 ,
                         0x0000000000000000000000000000000000000000000000000000000000000000 ,
                         0x5b0063007a00790044006500630079007a0079006a006e0061005d003d005400 ,
                         0x72007500650000000000
@@ -163,7 +169,7 @@ PublishOption =1
                     LayoutCachedHeight =390
                     LayoutGroup =1
                     BackThemeColorIndex =-1
-                        0x01000100000001000000000000000100000000000000fffa9300130000005b00 ,
+                        0x01000100000001000000000000000100000022b14c00ffffff00130000005b00 ,
                         0x63007a00790044006500630079007a0079006a006e0061005d003d0054007200 ,
                         0x75006500000000000000000000000000000000000000000000
                     End
@@ -172,6 +178,7 @@ PublishOption =1
                     CanShrink = NotDefault
                     IsHyperlink = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Top =705
@@ -185,7 +192,7 @@ PublishOption =1
                     ControlSource ="mail"
                     OnClick ="[Event Procedure]"
                         0x010000008a000000010000000100000000000000000000001400000001000000 ,
-                        0x00000000fffa9300000000000000000000000000000000000000000000000000 ,
+                        0x22b14c00ffffff00000000000000000000000000000000000000000000000000 ,
                         0x0000000000000000000000000000000000000000000000000000000000000000 ,
                         0x5b0063007a00790044006500630079007a0079006a006e0061005d003d005400 ,
                         0x72007500650000000000
@@ -205,7 +212,7 @@ PublishOption =1
                     RowEnd =2
                     LayoutGroup =1
                     BackThemeColorIndex =-1
-                        0x01000100000001000000000000000100000000000000fffa9300130000005b00 ,
+                        0x01000100000001000000000000000100000022b14c00ffffff00130000005b00 ,
                         0x63007a00790044006500630079007a0079006a006e0061005d003d0054007200 ,
                         0x75006500000000000000000000000000000000000000000000
                     End
@@ -213,6 +220,7 @@ PublishOption =1
                 End
                     CanShrink = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Top =390
@@ -225,7 +233,7 @@ PublishOption =1
                     Name ="Tekst49"
                     ControlSource ="opis"
                         0x010000008a000000010000000100000000000000000000001400000001000000 ,
-                        0x00000000fffa9300000000000000000000000000000000000000000000000000 ,
+                        0x22b14c00ffffff00000000000000000000000000000000000000000000000000 ,
                         0x0000000000000000000000000000000000000000000000000000000000000000 ,
                         0x5b0063007a00790044006500630079007a0079006a006e0061005d003d005400 ,
                         0x72007500650000000000
@@ -245,7 +253,7 @@ PublishOption =1
                     RowEnd =1
                     LayoutGroup =1
                     BackThemeColorIndex =-1
-                        0x01000100000001000000000000000100000000000000fffa9300130000005b00 ,
+                        0x01000100000001000000000000000100000022b14c00ffffff00130000005b00 ,
                         0x63007a00790044006500630079007a0079006a006e0061005d003d0054007200 ,
                         0x75006500000000000000000000000000000000000000000000
                     End
@@ -254,6 +262,7 @@ PublishOption =1
                     CanShrink = NotDefault
                     IsHyperlink = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Top =1020
@@ -267,7 +276,7 @@ PublishOption =1
                     ControlSource ="mail2"
                     OnClick ="[Event Procedure]"
                         0x010000008a000000010000000100000000000000000000001400000001000000 ,
-                        0x00000000fffa9300000000000000000000000000000000000000000000000000 ,
+                        0x22b14c00ffffff00000000000000000000000000000000000000000000000000 ,
                         0x0000000000000000000000000000000000000000000000000000000000000000 ,
                         0x5b0063007a00790044006500630079007a0079006a006e0061005d003d005400 ,
                         0x72007500650000000000
@@ -287,7 +296,7 @@ PublishOption =1
                     RowEnd =3
                     LayoutGroup =1
                     BackThemeColorIndex =-1
-                        0x01000100000001000000000000000100000000000000fffa9300130000005b00 ,
+                        0x01000100000001000000000000000100000022b14c00ffffff00130000005b00 ,
                         0x63007a00790044006500630079007a0079006a006e0061005d003d0054007200 ,
                         0x75006500000000000000000000000000000000000000000000
                     End
@@ -295,6 +304,7 @@ PublishOption =1
                 End
                     CanShrink = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Top =1335
@@ -307,7 +317,7 @@ PublishOption =1
                     Name ="Tekst51"
                     ControlSource ="telefon"
                         0x010000008a000000010000000100000000000000000000001400000001000000 ,
-                        0x00000000fffa9300000000000000000000000000000000000000000000000000 ,
+                        0x22b14c00ffffff00000000000000000000000000000000000000000000000000 ,
                         0x0000000000000000000000000000000000000000000000000000000000000000 ,
                         0x5b0063007a00790044006500630079007a0079006a006e0061005d003d005400 ,
                         0x72007500650000000000
@@ -327,7 +337,7 @@ PublishOption =1
                     RowEnd =4
                     LayoutGroup =1
                     BackThemeColorIndex =-1
-                        0x01000100000001000000000000000100000000000000fffa9300130000005b00 ,
+                        0x01000100000001000000000000000100000022b14c00ffffff00130000005b00 ,
                         0x63007a00790044006500630079007a0079006a006e0061005d003d0054007200 ,
                         0x75006500000000000000000000000000000000000000000000
                     End
@@ -347,7 +357,7 @@ PublishOption =1
                     Name ="Tekst52"
                     ControlSource ="telefon2"
                         0x010000008a000000010000000100000000000000000000001400000001000000 ,
-                        0x00000000fffa9300000000000000000000000000000000000000000000000000 ,
+                        0x22b14c00ffffff00000000000000000000000000000000000000000000000000 ,
                         0x0000000000000000000000000000000000000000000000000000000000000000 ,
                         0x5b0063007a00790044006500630079007a0079006a006e0061005d003d005400 ,
                         0x72007500650000000000
@@ -368,7 +378,7 @@ PublishOption =1
                     RowEnd =5
                     LayoutGroup =1
                     BackThemeColorIndex =-1
-                        0x01000100000001000000000000000100000000000000fffa9300130000005b00 ,
+                        0x01000100000001000000000000000100000022b14c00ffffff00130000005b00 ,
                         0x63007a00790044006500630079007a0079006a006e0061005d003d0054007200 ,
                         0x75006500000000000000000000000000000000000000000000
                     End

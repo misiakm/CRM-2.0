@@ -1,0 +1,3 @@
+﻿zadanie	osobyKontaktowe
+8	1
+8	3

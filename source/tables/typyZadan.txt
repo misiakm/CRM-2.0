@@ -1,1 +1,4 @@
 ﻿ID	typ
+1	Spotkanie
+2	Telefon
+3	E-mail
